@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Block vs Display Inline</title>
+    <style>
+      .common {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .block-element {
+        display: block;
+      }
+
+      .inline-element {
+        display: inline;
+      }
+
+      .pizza {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Display Block</h2>
+    <div class="block-element common">Pizza</div>
+    <div class="block-element common">Pesto</div>
+    <div class="block-element common">Mom's Spaghetti</div>
+
+    <h2>Display Inline</h2>
+    <span class="inline-element common">Burguer</span>
+    <span class="inline-element common">Hotdog</span>
+    <span class="inline-element common">Fries</span>
+  </body>
+</html>

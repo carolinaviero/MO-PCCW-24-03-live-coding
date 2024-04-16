@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Grid vs CSS Flexbox</title>
+    <style>
+      /* Common styles for both Grid and Flexbox */
+      .item {
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      /* CSS Grid Example */
+      .grid-container {
+        border: 2px solid #333;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto auto;
+        padding: 10px;
+      }
+
+      .grid-item {
+        /* Additional music theme */
+        background-color: #ffffcc;
+      }
+
+      /* CSS Flexbox Example with Music Theme */
+      .flex-container {
+        border: 2px solid #333;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      .flex-item {
+        /* Additional music theme */
+        background-color: #ffe6e6;
+        flex: 1; /* Equal distribution of space */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Grid Example</h2>
+    <div class="grid-container">
+      <div class="grid-item item">Jazz</div>
+      <div class="grid-item item">Rock</div>
+      <div class="grid-item item">Pop</div>
+      <div class="grid-item item">Classical</div>
+    </div>
+
+    <h2>CSS Flexbox Example</h2>
+    <div class="flex-container">
+      <div class="flex-item item">House</div>
+      <div class="flex-item item">Hip Hop</div>
+      <div class="flex-item item">Blues</div>
+      <div class="flex-item item">Reggae</div>
+    </div>
+  </body>
+</html>
