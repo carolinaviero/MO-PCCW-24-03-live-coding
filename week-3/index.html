@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sex and the City</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: lightpink;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      p {
+        max-width: 600px;
+      }
+      img {
+        object-fit: cover;
+      }
+      .character {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .characterSection {
+        margin-left: 20px;
+      }
+      .character img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sex and the City</h1>
+    </header>
+    <section class="characterSection">
+      <h2>My favourite characters:</h2>
+      <div class="character">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThUG1r1alIf3EyTX1VayHSYCF7uEXJZey6MhxG-d2jHc6_Qt8G7L2CPSBViNkdfXsM_rw&usqp=CAU"
+          alt="Carrie Bradshaw"
+        />
+        <h3 id="carrie">
+          Carrie Bradshaw Likes:
+          <span id="carrieLikes">0</span>
+          <button onclick="updateLikes('carrieLikes')">Like</button>
+        </h3>
+      </div>
+      <div class="character">
+        <img
+          src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2021_38/1778385/willie-garson-satc-kb-inline-210922.jpg"
+          alt="Stanford Blatch"
+        />
+        <h3 id="stanford">
+          Stanford Blatch. Likes:
+          <span id="stanfordLikes">0</span>
+          <button onclick="updateLikes('stanfordLikes')">Like</button>
+        </h3>
+      </div>
+      <div class="character">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9OrimByGBnAhXQe8eIO780L4pt9m21tJe03ejLsbpaQ&s"
+          alt="Samantha Unser"
+        />
+        <h3 id="samantha">
+          Samantha Jones. Likes:
+          <span id="samanthaLikes">0</span>
+          <button onclick="updateLikes('samanthaLikes')">Like</button>
+        </h3>
+      </div>
+    </section>
+
+    <script>
+      // Function to update character likes
+      function updateLikes(id) {
+        let likesSpan = document.getElementById(id);
+        console.log("likeSpan:", likesSpan); // likeSpan is defined here, thus can be accessed
+
+        console.log("likeSpan content value:", likesSpan.textContent);
+        let currentLikes = likesSpan.textContent; // What happens if we don't convert this to a number?
+        console.log(
+          "likeSpan value converted to int and assigned to currentLikes:",
+          parseInt(likesSpan.textContent) + 1
+        );
+
+        likesSpan.textContent = currentLikes + 1;
+      }
+    </script>
+  </body>
+</html>
