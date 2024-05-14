@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sex and the City</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: lightpink;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    p {
+      max-width: 600px;
+    }
+    img {
+      object-fit: cover;
+    }
+    .character {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .characterSection {
+      margin-left: 20px;
+    }
+    .character img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>Sex and the City</h1>
+    </header>
+    <section class="characterSection">
+      <h2>My favourite characters:</h2>
+    </section>
+  </div>
+
+  <script src="./characters.js"></script>
+  <script>
+    // Function to update character likes
+    function updateLikes(id) {
+      let likesSpan = document.getElementById(id);
+      let currentLikes = parseInt(likesSpan.textContent);
+      likesSpan.textContent = currentLikes + 1;
+    }
+
+    // Function to create characters
+    function createCharacters(characters) {
+      const container = document.querySelector('.characterSection');
+
+      for (let i = 0; i < characters.length; i++) {
+        const character = characters[i];
+
+        // Create character div
+        const characterDiv = document.createElement('div');
+        characterDiv.classList.add('character');
+
+        // Create character image
+        const characterImg = document.createElement('img');
+        characterImg.src = character.imageUrl;
+        characterImg.alt = character.altText;
+
+        // Create character likes span
+        const characterLikes = document.createElement('span');
+        characterLikes.textContent = '0';
+
+        // Create like button
+        const likeButton = document.createElement('button');
+        likeButton.textContent = 'Like';
+        likeButton.addEventListener('click', function() {
+          updateLikes(`${character.name} Likes`);
+        });
+
+        // Create character heading
+        const characterHeading = document.createElement('h3');
+        characterHeading.textContent = `${character.name} - Likes: `;
+        characterHeading.appendChild(characterLikes);
+        characterHeading.appendChild(likeButton);
+
+        // Append elements to character div
+        characterDiv.appendChild(characterImg);
+        characterDiv.appendChild(characterHeading);
+
+        // Append character div to container
+        container.appendChild(characterDiv);
+      }
+    }
+
+    // Call function to create characters
+    createCharacters(characters);
+  </script>
+</body>
+</html>
